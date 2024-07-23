@@ -24,7 +24,7 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart', 'Botplay', 'Exit'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart', 'Exit'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 	var retromenu:Bool = false;
@@ -73,13 +73,8 @@ class PauseSubState extends MusicBeatSubstate
 	public function new(x:Float, y:Float)
 	{
 		super();
-		if(PlayState.deathCounter == 3 || (!PlayState.isStoryMode && !PlayState.isWarp)){
-			luigitime = true;
-		}
-		if(luigitime){
-			optionShit = ['credits', 'freeplay', 'options', 'Exit'];
-			menuItemsOG = ['Resume', 'Restart', 'Botplay', 'Exit'];
-		} 
+		optionShit = ['credits', 'freeplay', 'options', 'Exit'];
+		menuItemsOG = ['Resume', 'Restart', 'Botplay', 'Exit'];
 		menuItems = menuItemsOG;
 
 		for (i in 0...CoolUtil.difficultyStuff.length)
